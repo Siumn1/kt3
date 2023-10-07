@@ -20,10 +20,11 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  String get first_name => throw _privateConstructorUsedError;
-  String get last_name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
   Bank get bank => throw _privateConstructorUsedError;
-  Adress get adress => throw _privateConstructorUsedError;
+  Address get address => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,10 +36,11 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String first_name, String last_name, Bank bank, Adress adress});
+  $Res call(
+      {int id, String firstName, String lastName, Bank bank, Address address});
 
   $BankCopyWith<$Res> get bank;
-  $AdressCopyWith<$Res> get adress;
+  $AddressCopyWith<$Res> get address;
 }
 
 /// @nodoc
@@ -54,28 +56,33 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? first_name = null,
-    Object? last_name = null,
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
     Object? bank = null,
-    Object? adress = null,
+    Object? address = null,
   }) {
     return _then(_value.copyWith(
-      first_name: null == first_name
-          ? _value.first_name
-          : first_name // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      last_name: null == last_name
-          ? _value.last_name
-          : last_name // ignore: cast_nullable_to_non_nullable
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       bank: null == bank
           ? _value.bank
           : bank // ignore: cast_nullable_to_non_nullable
               as Bank,
-      adress: null == adress
-          ? _value.adress
-          : adress // ignore: cast_nullable_to_non_nullable
-              as Adress,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address,
     ) as $Val);
   }
 
@@ -89,9 +96,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
   @override
   @pragma('vm:prefer-inline')
-  $AdressCopyWith<$Res> get adress {
-    return $AdressCopyWith<$Res>(_value.adress, (value) {
-      return _then(_value.copyWith(adress: value) as $Val);
+  $AddressCopyWith<$Res> get address {
+    return $AddressCopyWith<$Res>(_value.address, (value) {
+      return _then(_value.copyWith(address: value) as $Val);
     });
   }
 }
@@ -103,12 +110,13 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String first_name, String last_name, Bank bank, Adress adress});
+  $Res call(
+      {int id, String firstName, String lastName, Bank bank, Address address});
 
   @override
   $BankCopyWith<$Res> get bank;
   @override
-  $AdressCopyWith<$Res> get adress;
+  $AddressCopyWith<$Res> get address;
 }
 
 /// @nodoc
@@ -121,56 +129,65 @@ class __$$UserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? first_name = null,
-    Object? last_name = null,
+    Object? id = null,
+    Object? firstName = null,
+    Object? lastName = null,
     Object? bank = null,
-    Object? adress = null,
+    Object? address = null,
   }) {
     return _then(_$UserImpl(
-      first_name: null == first_name
-          ? _value.first_name
-          : first_name // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      last_name: null == last_name
-          ? _value.last_name
-          : last_name // ignore: cast_nullable_to_non_nullable
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
               as String,
       bank: null == bank
           ? _value.bank
           : bank // ignore: cast_nullable_to_non_nullable
               as Bank,
-      adress: null == adress
-          ? _value.adress
-          : adress // ignore: cast_nullable_to_non_nullable
-              as Adress,
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as Address,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$UserImpl implements _User {
+class _$UserImpl extends _User {
   _$UserImpl(
-      {required this.first_name,
-      required this.last_name,
+      {required this.id,
+      required this.firstName,
+      required this.lastName,
       required this.bank,
-      required this.adress});
+      required this.address})
+      : super._();
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
 
   @override
-  final String first_name;
+  final int id;
   @override
-  final String last_name;
+  final String firstName;
+  @override
+  final String lastName;
   @override
   final Bank bank;
   @override
-  final Adress adress;
+  final Address address;
 
   @override
   String toString() {
-    return 'User(first_name: $first_name, last_name: $last_name, bank: $bank, adress: $adress)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, bank: $bank, address: $address)';
   }
 
   @override
@@ -178,18 +195,19 @@ class _$UserImpl implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserImpl &&
-            (identical(other.first_name, first_name) ||
-                other.first_name == first_name) &&
-            (identical(other.last_name, last_name) ||
-                other.last_name == last_name) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
             (identical(other.bank, bank) || other.bank == bank) &&
-            (identical(other.adress, adress) || other.adress == adress));
+            (identical(other.address, address) || other.address == address));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, first_name, last_name, bank, adress);
+      Object.hash(runtimeType, id, firstName, lastName, bank, address);
 
   @JsonKey(ignore: true)
   @override
@@ -205,23 +223,27 @@ class _$UserImpl implements _User {
   }
 }
 
-abstract class _User implements User {
+abstract class _User extends User {
   factory _User(
-      {required final String first_name,
-      required final String last_name,
+      {required final int id,
+      required final String firstName,
+      required final String lastName,
       required final Bank bank,
-      required final Adress adress}) = _$UserImpl;
+      required final Address address}) = _$UserImpl;
+  _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
-  String get first_name;
+  int get id;
   @override
-  String get last_name;
+  String get firstName;
+  @override
+  String get lastName;
   @override
   Bank get bank;
   @override
-  Adress get adress;
+  Address get address;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

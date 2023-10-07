@@ -4,12 +4,12 @@ part 'adress.freezed.dart';
 part 'adress.g.dart';
 
 @freezed
-class Adress with _$Adress {
+class Address with _$Address {
 
-  factory Adress({
-    @Default('') String adress,
+  factory Address({
+    @Default('') String address,
     @Default('') String city,
-  }) = _Adress;
+  }) = _Address;
 
-  factory Adress.fromJson(Map<String, dynamic> json) => _$AdressFromJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
 }

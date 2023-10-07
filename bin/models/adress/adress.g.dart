@@ -6,13 +6,14 @@ part of 'adress.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AdressImpl _$$AdressImplFromJson(Map<String, dynamic> json) => _$AdressImpl(
-      adress: json['adress'] as String? ?? '',
+_$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
+    _$AddressImpl(
+      address: json['address'] as String? ?? '',
       city: json['city'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$AdressImplToJson(_$AdressImpl instance) =>
+Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
     <String, dynamic>{
-      'adress': instance.adress,
+      'address': instance.address,
       'city': instance.city,
     };

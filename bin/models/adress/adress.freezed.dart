@@ -14,32 +14,32 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Adress _$AdressFromJson(Map<String, dynamic> json) {
-  return _Adress.fromJson(json);
+Address _$AddressFromJson(Map<String, dynamic> json) {
+  return _Address.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Adress {
-  String get adress => throw _privateConstructorUsedError;
+mixin _$Address {
+  String get address => throw _privateConstructorUsedError;
   String get city => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AdressCopyWith<Adress> get copyWith => throw _privateConstructorUsedError;
+  $AddressCopyWith<Address> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AdressCopyWith<$Res> {
-  factory $AdressCopyWith(Adress value, $Res Function(Adress) then) =
-      _$AdressCopyWithImpl<$Res, Adress>;
+abstract class $AddressCopyWith<$Res> {
+  factory $AddressCopyWith(Address value, $Res Function(Address) then) =
+      _$AddressCopyWithImpl<$Res, Address>;
   @useResult
-  $Res call({String adress, String city});
+  $Res call({String address, String city});
 }
 
 /// @nodoc
-class _$AdressCopyWithImpl<$Res, $Val extends Adress>
-    implements $AdressCopyWith<$Res> {
-  _$AdressCopyWithImpl(this._value, this._then);
+class _$AddressCopyWithImpl<$Res, $Val extends Address>
+    implements $AddressCopyWith<$Res> {
+  _$AddressCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -49,13 +49,13 @@ class _$AdressCopyWithImpl<$Res, $Val extends Adress>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adress = null,
+    Object? address = null,
     Object? city = null,
   }) {
     return _then(_value.copyWith(
-      adress: null == adress
-          ? _value.adress
-          : adress // ignore: cast_nullable_to_non_nullable
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
           ? _value.city
@@ -66,33 +66,33 @@ class _$AdressCopyWithImpl<$Res, $Val extends Adress>
 }
 
 /// @nodoc
-abstract class _$$AdressImplCopyWith<$Res> implements $AdressCopyWith<$Res> {
-  factory _$$AdressImplCopyWith(
-          _$AdressImpl value, $Res Function(_$AdressImpl) then) =
-      __$$AdressImplCopyWithImpl<$Res>;
+abstract class _$$AddressImplCopyWith<$Res> implements $AddressCopyWith<$Res> {
+  factory _$$AddressImplCopyWith(
+          _$AddressImpl value, $Res Function(_$AddressImpl) then) =
+      __$$AddressImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String adress, String city});
+  $Res call({String address, String city});
 }
 
 /// @nodoc
-class __$$AdressImplCopyWithImpl<$Res>
-    extends _$AdressCopyWithImpl<$Res, _$AdressImpl>
-    implements _$$AdressImplCopyWith<$Res> {
-  __$$AdressImplCopyWithImpl(
-      _$AdressImpl _value, $Res Function(_$AdressImpl) _then)
+class __$$AddressImplCopyWithImpl<$Res>
+    extends _$AddressCopyWithImpl<$Res, _$AddressImpl>
+    implements _$$AddressImplCopyWith<$Res> {
+  __$$AddressImplCopyWithImpl(
+      _$AddressImpl _value, $Res Function(_$AddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? adress = null,
+    Object? address = null,
     Object? city = null,
   }) {
-    return _then(_$AdressImpl(
-      adress: null == adress
-          ? _value.adress
-          : adress // ignore: cast_nullable_to_non_nullable
+    return _then(_$AddressImpl(
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
           ? _value.city
@@ -104,62 +104,62 @@ class __$$AdressImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AdressImpl implements _Adress {
-  _$AdressImpl({this.adress = '', this.city = ''});
+class _$AddressImpl implements _Address {
+  _$AddressImpl({this.address = '', this.city = ''});
 
-  factory _$AdressImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AdressImplFromJson(json);
+  factory _$AddressImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AddressImplFromJson(json);
 
   @override
   @JsonKey()
-  final String adress;
+  final String address;
   @override
   @JsonKey()
   final String city;
 
   @override
   String toString() {
-    return 'Adress(adress: $adress, city: $city)';
+    return 'Address(address: $address, city: $city)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AdressImpl &&
-            (identical(other.adress, adress) || other.adress == adress) &&
+            other is _$AddressImpl &&
+            (identical(other.address, address) || other.address == address) &&
             (identical(other.city, city) || other.city == city));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, adress, city);
+  int get hashCode => Object.hash(runtimeType, address, city);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AdressImplCopyWith<_$AdressImpl> get copyWith =>
-      __$$AdressImplCopyWithImpl<_$AdressImpl>(this, _$identity);
+  _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>
+      __$$AddressImplCopyWithImpl<_$AddressImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AdressImplToJson(
+    return _$$AddressImplToJson(
       this,
     );
   }
 }
 
-abstract class _Adress implements Adress {
-  factory _Adress({final String adress, final String city}) = _$AdressImpl;
+abstract class _Address implements Address {
+  factory _Address({final String address, final String city}) = _$AddressImpl;
 
-  factory _Adress.fromJson(Map<String, dynamic> json) = _$AdressImpl.fromJson;
+  factory _Address.fromJson(Map<String, dynamic> json) = _$AddressImpl.fromJson;
 
   @override
-  String get adress;
+  String get address;
   @override
   String get city;
   @override
   @JsonKey(ignore: true)
-  _$$AdressImplCopyWith<_$AdressImpl> get copyWith =>
+  _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

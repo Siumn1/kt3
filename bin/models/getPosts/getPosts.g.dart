@@ -8,14 +8,13 @@ part of 'getPosts.dart';
 
 _$GetPostsImpl _$$GetPostsImplFromJson(Map<String, dynamic> json) =>
     _$GetPostsImpl(
-      userId: json['userId'] as String,
-      tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+      posts: (json['posts'] as List<dynamic>?)
+              ?.map((e) => Post.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$GetPostsImplToJson(_$GetPostsImpl instance) =>
     <String, dynamic>{
-      'userId': instance.userId,
-      'tags': instance.tags,
+      'posts': instance.posts,
     };

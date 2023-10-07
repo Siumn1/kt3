@@ -20,8 +20,7 @@ GetPosts _$GetPostsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetPosts {
-  String get userId => throw _privateConstructorUsedError;
-  List<String> get tags => throw _privateConstructorUsedError;
+  List<Post> get posts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +33,7 @@ abstract class $GetPostsCopyWith<$Res> {
   factory $GetPostsCopyWith(GetPosts value, $Res Function(GetPosts) then) =
       _$GetPostsCopyWithImpl<$Res, GetPosts>;
   @useResult
-  $Res call({String userId, List<String> tags});
+  $Res call({List<Post> posts});
 }
 
 /// @nodoc
@@ -50,18 +49,13 @@ class _$GetPostsCopyWithImpl<$Res, $Val extends GetPosts>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
-    Object? tags = null,
+    Object? posts = null,
   }) {
     return _then(_value.copyWith(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      tags: null == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      posts: null == posts
+          ? _value.posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<Post>,
     ) as $Val);
   }
 }
@@ -74,7 +68,7 @@ abstract class _$$GetPostsImplCopyWith<$Res>
       __$$GetPostsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String userId, List<String> tags});
+  $Res call({List<Post> posts});
 }
 
 /// @nodoc
@@ -88,18 +82,13 @@ class __$$GetPostsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = null,
-    Object? tags = null,
+    Object? posts = null,
   }) {
     return _then(_$GetPostsImpl(
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-      tags: null == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+      posts: null == posts
+          ? _value._posts
+          : posts // ignore: cast_nullable_to_non_nullable
+              as List<Post>,
     ));
   }
 }
@@ -107,26 +96,23 @@ class __$$GetPostsImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GetPostsImpl implements _GetPosts {
-  _$GetPostsImpl({required this.userId, final List<String> tags = const []})
-      : _tags = tags;
+  _$GetPostsImpl({final List<Post> posts = const []}) : _posts = posts;
 
   factory _$GetPostsImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetPostsImplFromJson(json);
 
-  @override
-  final String userId;
-  final List<String> _tags;
+  final List<Post> _posts;
   @override
   @JsonKey()
-  List<String> get tags {
-    if (_tags is EqualUnmodifiableListView) return _tags;
+  List<Post> get posts {
+    if (_posts is EqualUnmodifiableListView) return _posts;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tags);
+    return EqualUnmodifiableListView(_posts);
   }
 
   @override
   String toString() {
-    return 'GetPosts(userId: $userId, tags: $tags)';
+    return 'GetPosts(posts: $posts)';
   }
 
   @override
@@ -134,14 +120,13 @@ class _$GetPostsImpl implements _GetPosts {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetPostsImpl &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            const DeepCollectionEquality().equals(other._tags, _tags));
+            const DeepCollectionEquality().equals(other._posts, _posts));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, userId, const DeepCollectionEquality().hash(_tags));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_posts));
 
   @JsonKey(ignore: true)
   @override
@@ -158,16 +143,13 @@ class _$GetPostsImpl implements _GetPosts {
 }
 
 abstract class _GetPosts implements GetPosts {
-  factory _GetPosts({required final String userId, final List<String> tags}) =
-      _$GetPostsImpl;
+  factory _GetPosts({final List<Post> posts}) = _$GetPostsImpl;
 
   factory _GetPosts.fromJson(Map<String, dynamic> json) =
       _$GetPostsImpl.fromJson;
 
   @override
-  String get userId;
-  @override
-  List<String> get tags;
+  List<Post> get posts;
   @override
   @JsonKey(ignore: true)
   _$$GetPostsImplCopyWith<_$GetPostsImpl> get copyWith =>

@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../post/post.dart';
+
 
 part 'getPosts.freezed.dart';
 part 'getPosts.g.dart';
@@ -8,8 +10,7 @@ part 'getPosts.g.dart';
 class GetPosts with _$GetPosts {
 
   factory GetPosts({
-    required String userId,
-    @Default([]) List<String> tags,
+    @Default([]) List<Post> posts,
   }) = _GetPosts;
 
   factory GetPosts.fromJson(Map<String, dynamic> json) => _$GetPostsFromJson(json);
