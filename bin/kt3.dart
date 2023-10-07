@@ -24,7 +24,7 @@ void main(List<String> arguments) async {
       if (!foundId.contains(element.userId)) foundId.add(element.userId);
     }
   }
-  //foundId.sort();
+  foundId.sort();
   //print(foundId);
 
   var userResponse = await httpClient.get('/users?limit=150');
