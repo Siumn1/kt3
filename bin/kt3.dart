@@ -31,7 +31,7 @@ void main(List<String> arguments) async {
   GetUser users = GetUser.fromJson(userResponse.data);
   int counter = 1;
   for (var element in users.users) {
-    if ((element.bank.isExpired == 23) && foundId.contains(element.id) && element.gender == 'male') {
+    if ((element.bank.isExpired) && foundId.contains(element.id) && element.gender == 'male') {
       print(
           '$counter ${element.shortName} - expired ${element.bank.cardExpire} ${element.address.city}, ${element.address.address}');
       counter++;
