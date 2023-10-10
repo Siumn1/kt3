@@ -5,10 +5,11 @@ part 'bank.g.dart';
 
 @freezed
 class Bank with _$Bank {
-
+  Bank._();
   factory Bank({
     required String cardExpire,
   }) = _Bank;
+  int get isExpired => int.parse(cardExpire.substring(3));
 
   factory Bank.fromJson(Map<String, dynamic> json) => _$BankFromJson(json);
 }

@@ -92,8 +92,8 @@ class __$$BankImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BankImpl implements _Bank {
-  _$BankImpl({required this.cardExpire});
+class _$BankImpl extends _Bank {
+  _$BankImpl({required this.cardExpire}) : super._();
 
   factory _$BankImpl.fromJson(Map<String, dynamic> json) =>
       _$$BankImplFromJson(json);
@@ -133,8 +133,9 @@ class _$BankImpl implements _Bank {
   }
 }
 
-abstract class _Bank implements Bank {
+abstract class _Bank extends Bank {
   factory _Bank({required final String cardExpire}) = _$BankImpl;
+  _Bank._() : super._();
 
   factory _Bank.fromJson(Map<String, dynamic> json) = _$BankImpl.fromJson;
 

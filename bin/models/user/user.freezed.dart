@@ -25,6 +25,7 @@ mixin _$User {
   String get lastName => throw _privateConstructorUsedError;
   Bank get bank => throw _privateConstructorUsedError;
   Address get address => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +38,12 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {int id, String firstName, String lastName, Bank bank, Address address});
+      {int id,
+      String firstName,
+      String lastName,
+      Bank bank,
+      Address address,
+      String gender});
 
   $BankCopyWith<$Res> get bank;
   $AddressCopyWith<$Res> get address;
@@ -61,6 +67,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? lastName = null,
     Object? bank = null,
     Object? address = null,
+    Object? gender = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,6 +90,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 
@@ -111,7 +122,12 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id, String firstName, String lastName, Bank bank, Address address});
+      {int id,
+      String firstName,
+      String lastName,
+      Bank bank,
+      Address address,
+      String gender});
 
   @override
   $BankCopyWith<$Res> get bank;
@@ -134,6 +150,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? lastName = null,
     Object? bank = null,
     Object? address = null,
+    Object? gender = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -156,6 +173,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as Address,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -168,7 +189,8 @@ class _$UserImpl extends _User {
       required this.firstName,
       required this.lastName,
       required this.bank,
-      required this.address})
+      required this.address,
+      required this.gender})
       : super._();
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
@@ -184,10 +206,12 @@ class _$UserImpl extends _User {
   final Bank bank;
   @override
   final Address address;
+  @override
+  final String gender;
 
   @override
   String toString() {
-    return 'User(id: $id, firstName: $firstName, lastName: $lastName, bank: $bank, address: $address)';
+    return 'User(id: $id, firstName: $firstName, lastName: $lastName, bank: $bank, address: $address, gender: $gender)';
   }
 
   @override
@@ -201,13 +225,14 @@ class _$UserImpl extends _User {
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.bank, bank) || other.bank == bank) &&
-            (identical(other.address, address) || other.address == address));
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.gender, gender) || other.gender == gender));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, firstName, lastName, bank, address);
+      Object.hash(runtimeType, id, firstName, lastName, bank, address, gender);
 
   @JsonKey(ignore: true)
   @override
@@ -229,7 +254,8 @@ abstract class _User extends User {
       required final String firstName,
       required final String lastName,
       required final Bank bank,
-      required final Address address}) = _$UserImpl;
+      required final Address address,
+      required final String gender}) = _$UserImpl;
   _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -244,6 +270,8 @@ abstract class _User extends User {
   Bank get bank;
   @override
   Address get address;
+  @override
+  String get gender;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

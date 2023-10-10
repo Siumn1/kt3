@@ -15,8 +15,9 @@ class User with _$User {
     required String lastName,
     required Bank bank,
     required Address address,
+    required String gender,
   }) = _User;
-  int get yearBankCardExpire => int.parse(bank.cardExpire.substring(3));
+  
   String get shortName => "${firstName[0]}, $lastName";
 
   
